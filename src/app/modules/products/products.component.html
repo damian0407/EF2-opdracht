@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My Angular App</title>
+    <base href="/" />
+
+    <!-- Add the Google Fonts preconnect and stylesheet links here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-montserrat">
+    <section class="grid">
+      <article class="accordion">
+        <h1 class="text-2xl font-bold items-center">Veelgekochte producten</h1>
+        <div
+          class="accordion-item"
+          *ngFor="let product of products | slice : 0 : 4; let i = index"
+        >
+          <div class="max-w-lg p-3">
+            <details class="" (click)="toggleAccordionItem(i)">
+              <summary class="accordion-header">
+                <span class="accordion-icon">
+                  <mat-icon *ngIf="!isMenuOpen[i]" class="accordion-icon__add"
+                    >add</mat-icon
+                  >
+                  <mat-icon *ngIf="isMenuOpen[i]" class="accordion-icon__min"
+                    >minimize</mat-icon
+                  >
+                </span>
+                {{ product.title }}
+              </summary>
+              <div class="accordion-body">
+                <p>
+                  {{ product.description }}
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+        <section>
+          <button class="btn accordion-btn">
+            <span> Bekijk alle producten </span>
+            <mat-icon>keyboard_arrow_right </mat-icon>
+          </button>
+        </section>
+      </article>
+    </section>
+  </body>
+</html>
+
+<!-- <button class="accordion-title">
+  {{ product.title }}
+</button>
+<div class="accordion-content">
+  {{ product.description }}
+</div> -->
