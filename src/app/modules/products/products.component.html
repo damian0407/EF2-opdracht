@@ -21,29 +21,27 @@
           *ngFor="let product of products | slice : 0 : 4; let i = index"
           [ngClass]="{ menuOpenBg: isMenuOpen[i] }"
         >
-          <div class="max-w-lg p-3">
-            <details class="">
-              <summary
-                class="accordion-item__header"
-                (click)="toggleAccordionItem(i)"
-              >
-                <span class="accordion-item__icon">
-                  <mat-icon *ngIf="!isMenuOpen[i]" class="accordion-icon__add"
-                    >add</mat-icon
-                  >
-                  <mat-icon *ngIf="isMenuOpen[i]" class="accordion-icon__min"
-                    >minimize</mat-icon
-                  >
-                </span>
-                {{ product.title }}
-              </summary>
-              <div class="accordion-body">
-                <p>
-                  {{ product.description }}
-                </p>
-              </div>
-            </details>
-          </div>
+          <details class="max-w-lg p-3">
+            <summary
+              class="accordion-item__header"
+              (click)="toggleAccordionItem(i)"
+            >
+              <span class="accordion-item__icon">
+                <mat-icon *ngIf="!isMenuOpen[i]" class="accordion-icon__add"
+                  >add</mat-icon
+                >
+                <mat-icon *ngIf="isMenuOpen[i]" class="accordion-icon__min"
+                  >minimize</mat-icon
+                >
+              </span>
+              {{ product.title }}
+            </summary>
+            <div class="accordion-body">
+              <p>
+                {{ product.description }}
+              </p>
+            </div>
+          </details>
         </div>
         <section>
           <button class="btn accordion-btn">

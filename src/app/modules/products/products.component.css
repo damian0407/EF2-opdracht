@@ -28,7 +28,7 @@
     @apply pt-2 pb-5 pl-9 transition-all duration-200 ease-out text-justify inline-block text-black text-base font-normal;
   }
   .accordion-btn {
-    @apply py-2 px-4 rounded bg-lime-500 text-white w-[214px] justify-center flex gap-2;
+    @apply py-2 px-4 rounded bg-lime-500 text-white w-[214px] justify-center flex gap-2 hover:bg-opacity-90;
   }
   .accordion-btn__text {
     @apply font-bold;
