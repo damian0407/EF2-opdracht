@@ -1,4 +1,11 @@
 export interface Product {
+  products: ProductData[];
+  total: number;
+  skip: number;
+  limit: number;
+}
+
+export interface ProductData {
   id: number;
   title: string;
   description: string;
