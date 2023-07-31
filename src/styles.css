@@ -1,3 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@layer components {
+  .accordion-title {
+    @apply text-2xl pb-[15px] font-bold items-center;
+  }
+  .grid {
+    @apply mx-[145px] grid-cols-12 gap-5 h-screen;
+  }
+  .accordion {
+    @apply col-span-8 col-start-3 pt-[250px];
+  }
+  .accordion-item {
+    @apply mb-4;
+  }
+  .accordion-item__icon {
+    @apply pr-3 text-3xl;
+  }
+  .accordion-icon__min {
+    @apply pb-7;
+  }
+  .accordion-item__header {
+    @apply font-bold cursor-pointer flex items-center content-none;
+  }
+  .accordion-body {
+    @apply pt-2 pb-5 pl-9 transition-all duration-200 ease-out text-justify inline-block text-black text-base font-normal;
+  }
+  .accordion-btn {
+    @apply py-2 px-4 bg-lime-500 text-white w-[214px] justify-center flex gap-2 relative overflow-hidden rounded-lg;
+  }
+  .accordion-btn__box {
+    @apply absolute left-0 top-0 mt-12 h-64 w-64 bg-cyan-600 transition-all duration-500 ease-linear group-hover:-mt-24 group-hover:-rotate-45;
+  }
+  .accordion-btn__text {
+    @apply relative font-bold;
+  }
+  .accordion-btn__icon {
+    @apply relative w-3.5 h-3.5 overflow-visible;
+  }
+  .menuOpenBg {
+    @apply bg-[#E5F7F9];
+  }
+}
