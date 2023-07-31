@@ -3,32 +3,40 @@
 @tailwind utilities;
 
 @layer components {
+  .accordion-title {
+    @apply text-2xl pb-[15px] font-bold items-center;
+  }
   .grid {
     @apply mx-[145px] grid-cols-12 gap-5 h-screen;
   }
   .accordion {
-    @apply col-span-8 row-span-1 col-start-3 row-start-2;
+    @apply col-span-8 col-start-3 pt-[250px];
   }
   .accordion-item {
-    @apply hover:bg-sky-200 text-base;
+    @apply mb-4;
   }
-  .accordion-icon {
+  .accordion-item__icon {
     @apply pr-3 text-3xl;
   }
-  /* .accordion-icon__add {
-  @apply bg-red-50;
-} */
   .accordion-icon__min {
-    @apply pb-8;
+    @apply pb-7;
   }
-  .accordion-header {
+  .accordion-item__header {
     @apply font-bold cursor-pointer flex items-center content-none;
-    /* py-4 px-6 */
   }
   .accordion-body {
-    @apply py-2 pl-9 max-h-0 transition-all duration-200 ease-out;
+    @apply pt-2 pb-5 pl-9 transition-all duration-200 ease-out text-justify inline-block text-black text-base font-normal;
   }
   .accordion-btn {
-    @apply font-bold py-2 px-4 rounded bg-green-400 text-white;
+    @apply py-2 px-4 rounded bg-lime-500 text-white w-[214px] justify-center flex gap-2;
+  }
+  .accordion-btn__text {
+    @apply font-bold;
+  }
+  .accordion-btn__icon {
+    @apply w-3.5 h-3.5 overflow-visible;
+  }
+  .menuOpenBg {
+    @apply bg-[#E5F7F9];
   }
 }
