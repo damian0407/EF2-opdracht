@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>My Angular App</title>
     <base href="/" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -42,10 +41,12 @@
           </mat-expansion-panel>
         </mat-accordion>
         <section>
-          <button class="accordion-btn group">
+          <button class="accordion-btn group" (click)="startCounting()">
             <span class="accordion-btn__box"></span>
             <span class="accordion-btn__text"> Bekijk alles </span>
-            <mat-icon class="accordion-btn__icon"
+            <mat-icon
+              class="accordion-btn__icon"
+              [ngClass]="spin ? 'animate-spin' : ''"
               >keyboard_arrow_right
             </mat-icon>
           </button>
