@@ -16,33 +16,31 @@
     <section class="grid">
       <article class="accordion">
         <h1 class="accordion-title">Veelgekochte producten</h1>
-        <div
-          class="accordion-item"
-          *ngFor="let product of products | slice : 0 : 4; let i = index"
-          [ngClass]="{ menuOpenBg: isMenuOpen[i] }"
-        >
-          <details class="max-w-lg p-3">
-            <summary
-              class="accordion-item__header"
-              (click)="toggleAccordionItem(i)"
-            >
-              <span class="accordion-item__icon">
+        <mat-accordion class="accordion">
+          <mat-expansion-panel
+            *ngFor="let product of products | slice : 0 : 4; let i = index"
+            class="accordion-item"
+            [ngClass]="{ menuOpenBg: isMenuOpen[i] }"
+            (opened)="toggleAccordionItem(i)"
+            (closed)="toggleAccordionItem(i)"
+            hideToggle
+          >
+            <mat-expansion-panel-header>
+              <mat-panel-title>
                 <mat-icon *ngIf="!isMenuOpen[i]" class="accordion-icon__add"
                   >add</mat-icon
                 >
                 <mat-icon *ngIf="isMenuOpen[i]" class="accordion-icon__min"
                   >minimize</mat-icon
                 >
-              </span>
-              {{ product.title }}
-            </summary>
-            <div class="accordion-body">
-              <p>
-                {{ product.description }}
-              </p>
-            </div>
-          </details>
-        </div>
+                <h2 class="accordion-item__title">
+                  {{ product.title }}
+                </h2>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="accordion-item__body">{{ product.description }}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
         <section>
           <button class="accordion-btn group">
             <span class="accordion-btn__box"></span>

@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/core/services/product.service';
 export class ProductsComponent {
   products: ProductData[] = [];
   isMenuOpen: boolean[] = [];
+  panelOpenState: boolean = false;
 
   constructor(private productService: ProductService) {}
 
