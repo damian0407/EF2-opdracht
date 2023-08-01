@@ -1,8 +1,28 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes spin-slower {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
+  .header {
+    @apply hover:bg-[#E5F7F9];
+  }
   .grid {
     @apply grid-cols-12 gap-5 h-screen lg:mx-[145px];
   }
@@ -31,7 +51,7 @@
     @apply py-2 px-4 bg-lime-500 text-white w-[214px] justify-center flex gap-2 relative overflow-hidden rounded;
   }
   .accordion-btn__box {
-    @apply absolute left-0 top-0 mt-12 h-64 w-64 bg-cyan-600 transition-all duration-500 ease-linear group-hover:-mt-24 group-hover:-rotate-45;
+    @apply absolute left-0 top-0 mt-12 h-64 w-64 bg-[#FF7A00] transition-all duration-500 ease-linear group-hover:-mt-24 group-hover:-rotate-45;
   }
   .accordion-btn__text {
     @apply relative font-bold;
@@ -40,6 +60,27 @@
     @apply relative w-3.5 h-3.5 overflow-visible;
   }
   .menuOpenBg {
-    @apply bg-[#E5F7F9];
+    @apply bg-[#E5F7F9] !important;
+  }
+  .sun-container {
+    @apply flex items-center justify-center relative;
+    @apply absolute left-14 top-14 opacity-0 transition-opacity duration-[3000ms];
+  }
+  .sun-container:not(.showSun) {
+    @apply invisible;
+  }
+  .sun-rays {
+    @apply absolute w-[100px] animate-spin fill-yellow-300;
+  }
+  .sun-body {
+    @apply absolute bg-[#ffcc33] h-10 w-10 rounded-full;
+  }
+  .showSun {
+    @apply opacity-100;
+  }
+}
+@layer keyframes {
+  .animate-fadeIn {
+    animation: fadeIn 3s ease-in-out;
   }
 }
